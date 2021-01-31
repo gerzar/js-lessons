@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+	function include(url) {
+        var script = document.createElement('script');
+        script.src = url;
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
+    var point = +prompt("Введите номер задачи (1 или 2 или 3): ");
+    if (point == 1) {
+    	include("js/add_n1.js");
+    }else if(point == 2){
+    	include("js/add_n2.js");
+    }else if(point == 3){
+    	include("js/add_n3.js");
+    }else{
+    	alert("Неправильно набран номер...");
+    }
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
