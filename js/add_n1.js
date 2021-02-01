@@ -5,9 +5,7 @@
 // Для получения числа от пользователя пригодится функция prompt, а для вывода – alert.
 
 var num1 = +prompt("Введите первое число: "), num2 = +prompt("Введите второе число: ");
-function isNumber(num) {
-	return typeof num === 'number' && !isNaN(num);
-}
+
 if (isNumber(num1) && isNumber(num2)) {
 	if(num1 > num2){
 		alert("Первое число больше второго");
