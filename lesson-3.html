@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+
+		// 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+
+		/*var i = 1, result = 0, checker, number;
+		var counter = 0;
+		while( i < 100){
+			i++;
+			number = 0
+			checker = 0;
+			while(i >= number){
+				number++;
+				result = i%number;
+				if (result == 0) {
+					++checker;
+				}
+			}	
+			if (checker < 3) {
+				console.log(i);
+			}	
+		} */
+		//2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.
+		// var cart = [
+		// 	{
+		// 		name: 'prod1',
+		// 		price: 100,
+		// 		count: 1,
+		// 	},
+		// 	{
+		// 		name: 'prod2',
+		// 		price: 150,
+		// 		count: 2,
+		// 	},
+		// 	{
+		// 		name: 'prod3',
+		// 		price: 200,
+		// 		count: 2,
+		// 	},
+		// ];
+		//console.log(cart);
+		// var total = 0;
+		// for(prod of cart){
+		// 	total += prod.price * prod.count;
+		// }
+		//console.log(total);
+
+
+		// 3. Товары в корзине хранятся в массиве. Задачи:
+		// a) Организовать такой массив для хранения товаров в корзине;
+		// b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+		/*function countBasketPrice(cart_array){
+			var total = 0;
+			for(prod of cart_array){
+				total += prod.price * prod.count;
+			}
+			return total;
+		}
+		console.log(countBasketPrice(cart) ); */
+
+		// 4.*Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
+		// for(…){// здесь пусто}
+		/*for (var i = 0; i <= 9; console.log(i++) ) {
+			// тут пусто)
+		}*/
+
+		// 5. *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:
+		// x
+		// xx
+		// xxx
+		// xxxx
+		// xxxxx
+		
+		/*for (var i = 1; i <= 20; i++) {
+			var line = '';
+			for (var row = 1; row <= i; row++) {
+				line += 'x';
+			}
+			console.log(line);
+		}*/
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

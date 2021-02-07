@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		//задача 1
+		/*
+		var a = 1, b = 1, c, d; // так как c и d не определены то по умолчанию подставляется 0
+		c = ++a; alert(c);           // 2 потому что префиксная запись инкремента
+		d = b++; alert(d);           // 1 здесь постфиксная
+		c = (2+ ++a); alert(c);      // 5 префикс
+		d = (2+ b++); alert(d);      // 4 постфикс
+		alert(a);                    // 3 а здесь код прибавил два раза от изначального значения
+		alert(b);                    // 3 аналогично
+		*/
+
+		// задача 2
+		/*
+		var a = 2;
+		var x = 1 + (a *= 2);
+		x = 5
+		*/
+
+		// задача 3
+		// если a и b положительные, вывести их разность;
+		// если а и b отрицательные, вывести их произведение;
+		// если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+
+		/*
+		var a = (Math.random() * (20) - 10).toFixed(0), b = (Math.random() * (20) - 10).toFixed(0), result = 0;
+		if (a >= 0 && b >= 0) {
+			result = 'Разница чисел '+a+' и '+b+' равна: ' + (a - b);
+			//result = 'Разница чисел равна: ' + result;
+		}
+		else if(a < 0 && b <0){
+			result = 'произведение чисел '+a+' и '+b+' равна: ' + (a * b);
+			//result = 'произведение чисел равна: ' + result;
+		}
+		else {
+			result = parseInt(a) + parseInt(b);
+			result = 'сумма чисел '+a+' и '+b+' равна: ' + result;
+		}
+		alert(result);
+		*/
+
+		// задача 4 
+		// Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+
+		/*var a = parseInt((Math.random() * 14 + 1).toFixed(0));
+		switch(a){
+			case 1:
+			alert('1,2,3,4,5,6,7,8,9,10,11,12,13,14,15');
+			break;
+			case 2:
+			alert('2,3,4,5,6,7,8,9,10,11,12,13,14,15');
+			break;
+			case 3:
+			alert('3,4,5,6,7,8,9,10,11,12,13,14,15');
+			break;
+			case 4:
+			alert('4,5,6,7,8,9,10,11,12,13,14,15');
+			break;
+			case 5:
+			alert('5,6,7,8,9,10,11,12,13,14,15');
+			break;
+			case 6:
+			alert('6,7,8,9,10,11,12,13,14,15');
+			break;
+			case 7:
+			alert('7,8,9,10,11,12,13,14,15');
+			break;
+			case 8:
+			alert('8,9,10,11,12,13,14,15');
+			break;
+			case 9:
+			alert('9,10,11,12,13,14,15');
+			break;
+			case 10:
+			alert('10,11,12,13,14,15');
+			break;
+			case 11:
+			alert('11,12,13,14,15');
+			break;
+			case 12:
+			alert('12,13,14,15');
+			break;
+			case 13:
+			alert('13,14,15');
+			break;
+			case 14:
+			alert('14,15');
+			break;
+			case 15:
+			alert('15');
+			break;
+		} */
+
+		// 5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+
+		function numberSumm(a = 0, b = 0){
+			if (Number.isInteger(a) && Number.isInteger(b)) {
+				return a+b;
+			}else{
+				return false;
+			}
+		}
+		function numberDiff(a = 0, b = 0){
+			if (Number.isInteger(a) && Number.isInteger(b)) {
+				return a-b;
+			}else{
+				return false;
+			}
+		}
+		function numberMultiply(a = 0, b = 0){
+			if (Number.isInteger(a) && Number.isInteger(b)) {
+				return a*b;
+			}else{
+				return false;
+			}
+		}
+		function numberDivision(a = 0, b = 1){
+			if (Number.isInteger(a) && Number.isInteger(b)) {
+				return a/b;
+			}else{
+				return false;
+			}
+		}
+
+		//alert(numberSumm(5,10) + ' ' + numberDiff(5,10)+ ' ' + numberMultiply(5,10)+ ' ' + numberDivision(5,10)); //для отображения результата раскоментировать
+
+		//задача 6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).
+		function mathOperation(arg1, arg2, operation){
+			switch(operation){
+				case '+':
+				return(numberSumm(arg1,arg2));
+				break;
+				case '-':
+				return(numberDiff(arg1,arg2));
+				break;
+				case '*':
+				return(numberMultiply(arg1,arg2));
+				break;
+				case '/':
+				return(numberDivision(arg1,arg2));
+				break;
+				default:
+				return("Что-то пошло не так....");
+			}
+		}
+		// var arg1 = +prompt("Введите первое число: "), arg2 = +prompt("Введите второе число: "), operation = prompt("Введите операцию (+,-,*,/): ");	
+		// alert(mathOperation(arg1, arg2, operation)); //Нужно раскомментировать 2 строчки
+
+
+		// задача 7. *Сравнить null и 0. Попробуйте объяснить результат.
+		/*
+		if (null == 0) {
+			alert("Они равны");
+		}else{
+			alert("Не равны, так как null это пустое значение а 0 это число");
+		}
+		*/
+
+		//8. *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
+		var counter = 0;
+		var result = 1;
+		function power(val, pow){
+			if (counter == pow-1) {
+				return result;
+			}else if (counter < pow-1) {
+				++counter;
+				result = result * val;
+				power(result, pow);
+			}
+			return result;
+		}
+		//alert(power(2, 4)); //раскомментить для просмотра результата
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
